@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>player</title>
+    <link rel="preload" as="font" href="fonts/ArticoExpMedium.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/playerst.css">
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/playerst.js"></script>
+    <script src="scripts/yt.js"></script>
+  </head>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+    <div class="song">
+      <div class="cls-1" id="songF1"></div>
+    </div>
+    <div class="song">
+      <div class="cls-1" id="songM1"></div>
+    </div>
+    <div class="song">
+      <div class="cls-1" id="songD1"></div>
+    </div>
+
+    <div class="customer">
+      <div class="cls-1" id="custF1"></div>
+    </div>
+    <div class="customer">
+      <div class="cls-1" id="custM1"></div>
+    </div>
+    <div class="customer">
+      <div class="cls-1" id="custD1"></div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 751.578 250">
+      <defs>
+        <filter id="glowRate" y="-7" width="10" height="15">
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#fff" flood-opacity="1" />
+          <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#80e4ff" flood-opacity="1" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+        <filter id="glowProg" y="-3.5" width="1.06" x="-0.02" height="8">
+          <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ff3399" flood-opacity="1" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+        <radialGradient id="radial-gradient" cx="393.967" cy="146.082" r="388.964" gradientTransform="translate(-0.503 27.904) scale(1.017 0.794)" gradientUnits="userSpaceOnUse">
+          <stop offset="0.577" stop-color="#171717" stop-opacity="0.9"/>
+          <stop offset="0.701" stop-color="#0f0f0f" stop-opacity="0.936"/>
+          <stop offset="0.984"/>
+        </radialGradient>
+        <linearGradient id="New_Gradient_Swatch" data-name="New Gradient Swatch" x1="101.877" y1="231.803" x2="698.123" y2="231.803" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fff" stop-opacity="0.5"/>
+          <stop offset="0.032" stop-color="#fff" stop-opacity="0.594"/>
+          <stop offset="0.084" stop-color="#fff" stop-opacity="0.718"/>
+          <stop offset="0.141" stop-color="#fff" stop-opacity="0.822"/>
+          <stop offset="0.203" stop-color="#fff" stop-opacity="0.901"/>
+          <stop offset="0.273" stop-color="#fff" stop-opacity="0.957"/>
+          <stop offset="0.358" stop-color="#fff" stop-opacity="0.99"/>
+          <stop offset="0.5" stop-color="#fff"/>
+          <stop offset="0.642" stop-color="#fff" stop-opacity="0.99"/>
+          <stop offset="0.727" stop-color="#fff" stop-opacity="0.957"/>
+          <stop offset="0.797" stop-color="#fff" stop-opacity="0.901"/>
+          <stop offset="0.859" stop-color="#fff" stop-opacity="0.822"/>
+          <stop offset="0.916" stop-color="#fff" stop-opacity="0.718"/>
+          <stop offset="0.968" stop-color="#fff" stop-opacity="0.594"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0.5"/>
+        </linearGradient>
+        <linearGradient id="New_Gradient_Swatch-2" x1="101.877" y1="407.562" x2="698.123" y2="407.562" gradientTransform="matrix(1, 0, 0, -1, 0, 463.606)" xlink:href="#New_Gradient_Swatch"/>
+      </defs>
+      <g id="case">
+        <path id="case_back" class="cls-17" d="M774.62,110c-2.743-39.806-33.9-78.765-93.659-81.937C632.365,24.47,516.184,22.514,400,22.433c-116.181.081-232.362,2.037-280.958,5.629C59.291,31.234,28.147,70.194,25.386,110a490.372,490.372,0,0,0,0,67.849c2.761,39.8,33.905,78.764,93.659,81.936,48.6,3.592,164.777,5.549,280.958,5.629,116.181-.08,232.362-2.037,280.958-5.629,59.754-3.172,90.916-42.13,93.659-81.936A492.726,492.726,0,0,0,774.62,110Z" transform="translate(-24.211 -22.433)"/>
+      </g>
+      <g id="numbers">
+        <text id="likeNum" class="cls-18" text-anchor="start" transform="translate(91.79 74)">0</text>
+        <text id="dislikeNum" class="cls-18" text-anchor="end" transform="translate(659.79 74)">0</text>
+      </g>
+      <g id="gg" transform="translate(-59.86 0)">
+        <text id="sec" class="cls-18 timer0" text-anchor="start" transform="translate(382.3 197.154)">00</text>
+        <text id="min" class="cls-18 timer0" text-anchor="end" transform="translate(369 197.154)">00</text>
+        <text id="sep" class="cls-18" transform="translate(370.742 195.154)">:</text>
+
+        <text id="slash" class="cls-18" transform="translate(426.4 197)">/</text>
+
+        <text id="secS" class="cls-18 timer0" text-anchor="start" transform="translate(502.3 197.154)">00</text>
+        <text id="minS" class="cls-18 timer0" text-anchor="end" transform="translate(489 197.154)">00</text>
+        <text id="sepS" class="cls-18" transform="translate(490.742 195.154)">:</text>
+      </g>
+      <g id="rateBar">
+        <path id="rateBar_back" class="cls-23" d="M697.957,55.557c-.559,1.416-2.013,2.188-4.844,2.134C664.847,57.146,546.926,54.757,400,54.757s-264.847,2.389-293.113,2.934c-2.831.054-4.285-.718-4.844-2.134-1.129-2.862,3.465-7.176,14.7-7.538,38.193-1.23,136.2-3.732,283.255-3.732s245.062,2.5,283.255,3.732C694.492,48.381,699.086,52.7,697.957,55.557Z" transform="translate(-24.211 -22.433)"/>
+      </g>
+      <g id="rateGest">
+        <path id="plus2" class="cls-26" d="M81.507,95.661c0-2.238.02-3.351.055-5.587-2.453.1-3.666.154-6.119.266A4.429,4.429,0,0,1,70.615,85.9a4.828,4.828,0,0,1,4.717-5.078c2.559-.112,3.855-.162,6.418-.259.053-2.267.081-3.409.134-5.692a5.441,5.441,0,0,1,5.4-5.263c2.9-.072,4.753,2.143,4.659,4.977-.075,2.252-.114,3.371-.182,5.609,2.41-.077,3.6-.109,6.02-.187a4.513,4.513,0,0,1,4.8,4.564,4.712,4.712,0,0,1-4.7,4.962c-2.526.074-3.8.1-6.318.174-.021,2.265-.026,3.4-.013,5.668a5.16,5.16,0,0,1-5.1,5.223A4.739,4.739,0,0,1,81.507,95.661Z" transform="translate(-24.211 -22.433)"/>
+        <path id="minus" class="cls-27" d="M702.412,84.562c9,.42,17.936.948,17.936.948" transform="translate(-24.211 -22.433)"/>
+      </g>
+      <g id="ProgBar">
+        <path id="progBar_back" class="cls-28" d="M697.957,232.289c-.559-1.417-2.013-2.189-4.844-2.134-28.266.544-146.187,2.934-293.113,2.934s-264.847-2.39-293.113-2.934c-2.831-.055-4.285.717-4.844,2.134-1.129,2.861,3.465,7.176,14.7,7.537,38.193,1.23,136.2,3.733,283.255,3.733s245.062-2.5,283.255-3.733C694.492,239.465,699.086,235.15,697.957,232.289Z" transform="translate(-24.211 -22.433)"/>
+      </g>
+
+      <g filter="url(#glowRate)">
+        <defs>
+          <clipPath id="clip-path-3" shape-rendering="geometricPrecision" transform="translate(-24.211 -22.433)">
+            <path class="cls-16" d="M697.957,55.557c-.559,1.416-2.013,2.188-4.844,2.134C664.847,57.146,546.926,54.757,400,54.757s-264.847,2.389-293.113,2.934c-2.831.054-4.285-.718-4.844-2.134-1.129-2.862,3.465-7.176,14.7-7.538,38.193-1.23,136.2-3.732,283.255-3.732s245.062,2.5,283.255,3.732C694.492,48.381,699.086,52.7,697.957,55.557Z"/>
+          </clipPath>
+        </defs>
+        <g class="cls-24" clipPath="">
+          <path id="rateBar_fill" shape-rendering="geometricPrecision" class="cls-25" d="M101.812,53.166s149.5-3.6,298.188-3.6,298.188,3.6,298.188,3.6" transform="translate(-24.211 -22.433)" stroke-dasharray="298.5 298.5" stroke-dashoffset="597"/>
+        </g>
+      </g>
+
+      <g filter="url(#glowProg)">
+        <clipPath id="clip-path-4" transform="translate(-24.211 -22.433)">
+          <path id="progBarClipper" class="cls-15" d="M697.957,232.289c-.559-1.417-2.013-2.189-4.844-2.134-28.266.544-146.187,2.934-293.113,2.934s-264.847-2.39-293.113-2.934c-2.831-.055-4.285.717-4.844,2.134-1.129,2.861,3.465,7.176,14.7,7.537,38.193,1.23,136.2,3.733,283.255,3.733s245.062-2.5,283.255-3.733C694.492,239.465,699.086,235.15,697.957,232.289Z"/>
+        </clipPath>
+        <g class="cls-30">
+          <path id="progBar_fill" class="cls-29" d="M95.45,229.61l11.312,5.343s144.545,3.4,293.238,3.4,291.738-3.4,291.738-3.4" transform="translate(-24.211 -22.433)" stroke-dasharray="0 598" stroke-dashoffset="598"/>
+        </g>
+      </g>
+    </svg>
+    <div class="buttonBlock">Для теста
+      <button type="button" id="like">+</button>
+      <button type="button" id="dislike">-</button>
+      <button type="button" id="setSong">Song1</button>
+      <button type="button" id="setSong2">Song2</button>
+      <button type="button" id="setSong3">Song3</button>
+      <button type="button" id="setSong4">Song4</button>
+    </div>
+  </body>
+</html>
